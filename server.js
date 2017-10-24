@@ -371,5 +371,8 @@ app.get('/logout', function(req, res) {
 });
 app.use('/', router);
 
-server.listen(8080);
-console.log("Listening to PORT 8080");
+app.set('port', (process.env.PORT || 5000));
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
