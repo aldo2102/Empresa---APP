@@ -107,6 +107,10 @@ app.get('/index', function(req, res) {
         }
     });
 });
+var cool = require('cool-ascii-faces');
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
 
 app.get('/account', function(req, res) {
     res.render('ecommecer/index', {
