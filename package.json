@@ -1,0 +1,38 @@
+{
+  "name": "istup",
+  "version": "1.0.0",
+  "description": "Rede de Suplementos.",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Node.js",
+    "mongoDb"
+  ],
+  "author": "Aldo Henrique",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "^2.5.7",
+    "express": "^4.8.7",
+    "express-session": "^1.7.6",
+    "jade": "~1.11.0",
+    "js-sha1": "^0.4.1",
+    "morgan": "~1.9.0",
+    "promised-ejs": "~0.0.22",
+    "request": "~2.83.0",
+    "serve-favicon": "~2.4.5",
+    "socket.io": "~2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  }
+}

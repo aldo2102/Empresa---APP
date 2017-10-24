@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ISTUP - A sua rede de suplementos</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/device-mockups/device-mockups.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/new-age.css" rel="stylesheet">
+    
+    <link href="/css/form.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+    
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Assinatura</h4>
+        </div>
+        <div class="modal-body">
+          <% var message = message  %>
+          <p><%= message %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <img src="img/logoTrans.PNG" class="logo">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#download">Assine</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#features">Novidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contatos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+              <h1 class="mb-5">
+                  ISTUP é uma nova forma de comprar suplementos. Uma grande rede para atender você de forma rápida, fácil e de baixo preço!
+              </h1>
+              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Assine!</a>
+            </div>
+          </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                     <div class="container">
+			<div class="row main">
+				<div class="main-login main-center">
+				  <div class="text-center">
+	               		<img src="img/logo.PNG" width=150/>
+	               	</div>
+					<form class="form-horizontal" method="post" action="/landingPages">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Seu Nome</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Entre com seu nome"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Seu E-mail</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="mail" class="form-control" name="email" id="email"  placeholder="Entre com seu e-mail"/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Acompanhe</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+                  </div>
+                  <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="download bg-primary text-center" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="section-heading">Aguarde e descubra o que é todo esse barulho.</h2>
+              
+            <p>Assine e receba as novidades desse lançamento!</p>
+            
+				<div class="main-login main-center">
+				  
+					<form class="form-horizontal" method="post" action="/landingPages">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Seu Nome</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Entre com seu nome"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Seu E-mail</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="mail" class="form-control" name="email" id="email"  placeholder="Entre com seu e-mail"/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Acompanhe</button>
+						</div>
+					</form>
+				</div>
+            <div class="badges">
+              <p>Estará disponível nas lojas</p>
+              <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+              <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>Recursos ilimitados, diversão ilimitada</h2>
+          <p class="text-muted">Veja o que você poderá fazer com esta incrível novidades!</p>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <img src="img/ecommece.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 my-auto">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-screen-smartphone text-primary"></i>
+                    <h3>Estará em seu smartphone</h3>
+                    <p class="text-muted">Pronto para utilizar em seu celular e navegadores!</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-wallet text-primary"></i>
+                    <h3>Use menos sua carteira</h3>
+                    <p class="text-muted">Compre direto com seu cartão de crédito!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-present text-primary"></i>
+                    <h3>Dê presentes</h3>
+                    <p class="text-muted">Envie um presente de forma rápida e fácil!</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <i class="icon-map text-primary"></i>
+                    <h3>Estará o mais próximo de você</h3>
+                    <p class="text-muted">Será atendido por uma loja perto de você, de forma a facilitar e deixar a entrega ainda mais rápida!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <div class="container">
+          <h2>Não espere.<br>Acompanhe.</h2>
+          <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Assine já!</a>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </section>
+
+    <section class="contact bg-primary" id="contact">
+      <div class="container">
+        <h2>Nós
+          <i class="fa fa-heart"></i>
+          novos amigos!</h2>
+        <ul class="list-inline list-social">
+          <li class="list-inline-item social-twitter">
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-facebook">
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-google-plus">
+            <a href="#">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; <script>document.write((new Date()).getFullYear())</script> ISTUP. All Rights Reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    
+    
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/js/new-age.min.js"></script>
+    
+    <% if(message) { %>
+              <script> $("#myModal").modal() </script>
+          
+      <% }%>
+
+
+  </body>
+
+</html>
