@@ -1,0 +1,72 @@
+    
+    <% var page = status  %>
+    <% var company = company  %>
+    
+     <!-- loading page Header -->
+   <% if(page !="loginAdm"){ %>
+			<% include header %>
+	<% } %>
+    
+      <!-- loading page main -->
+	<% if(page =="main"){ %>
+			<% include main %>
+	<% } %>
+	
+	 <!-- loading page forms -->
+	<% if(page =="forms"){ %>
+			<% include forms %>
+	<% } %>
+	
+		 <!-- loading page tables -->
+	<% if(page =="tables"){ %>
+			<% include tables %>
+	<% } %>
+	
+		 <!-- loading page morris -->
+	<% if(page =="morris"){ %>
+			<% include morris %>
+	<% } %>
+	
+		 <!-- loading page flot -->
+	<% if(page =="flot"){ %>
+			<% include flot %>
+	<% } %>
+	
+		 <!-- loading page blank -->
+	<% if(page =="blank"){ %>
+			<% include blank %>
+	<% } %>
+	
+		 <!-- loading page grid -->
+	<% if(page =="grid"){ %>
+			<% include grid %>
+	<% } %>
+	
+			 <!-- loading page painel -->
+	<% if(page =="painel"){ %>
+			<% include panels-wells %>
+	<% } %>
+	
+	 <!-- loading page buttons -->
+	<% if(page =="buttons"){ %>
+			<% include buttons %>
+	<% } %>
+	
+		 <!-- loading page typography -->
+	<% if(page =="typography"){ %>
+			<% include typography %>
+	<% } %>	
+	
+		 <!-- loading page icons -->
+	<% if(page =="icons"){ %>
+			<% include icons %>
+	<% } %>
+	
+	<% if(page =="loginAdm"){ %>
+			<% include login %>
+	<% } %>
+	
+	 <% if(page !="loginAdm"){ %>
+		
+		<% include footer %>
+	<% } %>
