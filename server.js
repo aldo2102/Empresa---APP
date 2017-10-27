@@ -32,11 +32,9 @@ var backGet = {
 
 
 
-var http = require('http');
 
 var bodyParser = require("body-parser");
 var router = express.Router();
-var server = require("http").Server(app);
 var request = require('request');
 var path = require('path');
 
