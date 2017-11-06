@@ -5,8 +5,7 @@
   "main": "Server.js",  
   "homepage": "https://aldo2102.github.io/",
   "scripts": {
-    "start": "node server.js",
-  "postinstall": "bower install && grunt build",
+    "start": "node server.js"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   
