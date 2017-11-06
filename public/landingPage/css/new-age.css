@@ -120,6 +120,9 @@ header.masthead {
     background:url("../img/suplementos4.jpg"), -webkit-linear-gradient(to left,  #7B5A1A, #F0BF9F);
     background:url("../img/suplementos4.jpg"), linear-gradient(to left, #7B5A1A, #F0BF9F);
     
+  background-repeat:no-repeat;
+  
+    background-attachment: fixed;
   
 }
   header.masthead .header-content {
@@ -175,9 +178,14 @@ section.download {
       
 .features{
         
+ position: relative;
   background-image: url("../img/suplementos3.jpg");
+  background-repeat:no-repeat;
   
-      }
+    background-attachment: fixed;
+
+  
+}
 
 section.features .section-heading {
   margin-bottom: 100px; }
@@ -198,8 +206,8 @@ section.features .device-container {
       margin-bottom: 0; } }
 
 section.features .feature-item {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center; }
   section.features .feature-item h3 {
     font-size: 30px; }
@@ -216,6 +224,10 @@ section.cta {
   position: relative;
   padding: 250px 0;
   background-image: url("../img/suplementos.jpg");
+  
+  background-repeat:no-repeat;
+  
+    background-attachment: fixed;
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -289,6 +301,10 @@ footer {
 
 .bg-primary {
   background-image: url("../img/suplementos2.jpg");
+  
+  background-repeat:no-repeat;
+  
+    background-attachment: fixed;
 }
 
 .text-primary {
