@@ -114,13 +114,12 @@ section {
 
 header.masthead {
   position: relative;
-  width: 100%;
-  padding-top: 150px;
-  padding-bottom: 100px;
   color: white;
-  background: url("../img/bg-pattern.png"), #F0BF9F;
-    background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left,  #7B5A1A, #F0BF9F);
-    background: url('../img/bg-pattern.png'), linear-gradient(to left, #7B5A1A, #F0BF9F);
+  text-shadow: .1px .1px .1px grey; 
+  background: url("../img/suplementos4.jpg"), #F0BF9F;
+    background:url("../img/suplementos4.jpg"), -webkit-linear-gradient(to left,  #7B5A1A, #F0BF9F);
+    background:url("../img/suplementos4.jpg"), linear-gradient(to left, #7B5A1A, #F0BF9F);
+    
   
 }
   header.masthead .header-content {
@@ -133,8 +132,7 @@ header.masthead {
     max-width: 325px;
     margin-right: auto;
     margin-left: auto; }
-    header.masthead .device-container .screen img {
-      border-radius: 3px; }
+   
   @media (min-width: 992px) {
     header.masthead {
       height: 100vh;
@@ -148,6 +146,11 @@ header.masthead {
           font-size: 50px; }
       header.masthead .device-container {
         max-width: 325px; } }
+
+.form-group{
+  color:grey;
+  text-shadow: none;
+}
 
 section.download {
   position: relative;
@@ -169,6 +172,12 @@ section.download {
   @media (min-width: 768px) {
     section.download h2 {
       font-size: 70px; } }
+      
+.features{
+        
+  background-image: url("../img/suplementos3.jpg");
+  
+      }
 
 section.features .section-heading {
   margin-bottom: 100px; }
@@ -206,7 +215,7 @@ section.features .feature-item {
 section.cta {
   position: relative;
   padding: 250px 0;
-  background-image: url("../img/bg-cta.jpg");
+  background-image: url("../img/suplementos.jpg");
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -279,9 +288,8 @@ footer {
         text-decoration: none; }
 
 .bg-primary {
-  background: #fdcc52;
-  background: -webkit-linear-gradient(#fdcc52, #fdc539);
-  background: linear-gradient(#fdcc52, #fdc539); }
+  background-image: url("../img/suplementos2.jpg");
+}
 
 .text-primary {
   color: #fdcc52; }
