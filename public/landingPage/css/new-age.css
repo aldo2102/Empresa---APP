@@ -220,6 +220,10 @@ section.features .feature-item {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
 
+.navbar-toggler-right{
+	float: right;
+  
+}
 section.cta {
   position: relative;
   padding: 250px 0;

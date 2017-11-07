@@ -74,3 +74,8 @@ input::-webkit-input-placeholder {
 .logo{
 	width:25%;
 }
+
+#Logo{
+	width : '60px';
+	
+}
