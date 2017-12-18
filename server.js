@@ -97,21 +97,8 @@ app.get('/cool', function(request, response) {
     response.send(cool());
 });
 
-var wordpress = require( "wordpress" );
-var client = wordpress.createClient({
-    url: "istupblog.wordpress.com",
-    username: "aldoh.ti@gmail.com",
-    password: "Aldo007henrique"
-});
- 
- app.get('/blog', function(req, res) {
-        client.getPosts(function( error, posts ) {
-    console.log( "Found " + posts.length + " posts!" );
-});
-    });
- 
 
-
+ 
 
 app.use('/', router);
 
