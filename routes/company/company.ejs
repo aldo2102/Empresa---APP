@@ -1,0 +1,192 @@
+module.exports = (app, router, sess, backPost,request, adress) => {
+
+    app.get('/admCompany', function(req, res) {
+        sess = req.session;
+        if (sess.company) {
+            res.render('company/pages/index', { "status": "main", "company": sess.company });
+        }
+        else {
+            res.render('company/pages/index', { "status": "loginAdm" });
+        }
+    });
+
+    app.get('/admForm', function(req, res) {
+        sess = req.session;
+        if (sess.company) {
+            res.render('company/pages/index', {
+                "status": "forms",
+                "company": sess.company
+            });
+        }
+        else {
+            res.render('company/pages/index', { "status": "loginAdm" });
+        }
+
+    });
+
+
+    app.get('/tables', function(req, res) {
+
+        sess = req.session;
+        if (sess.company) {
+            res.render('company/pages/index', {
+                "status": "tables",
+                "company": sess.company
+            });
+        }
+        else {
+            res.render('company/pages/index', { "status": "loginAdm" });
+        }
+    });
+
+
+
+    app.get('/morris', function(req, res) {
+        sess = req.session;
+        if (sess.company) {
+            res.render('company/pages/index', {
+                "status": "morris",
+                "company": sess.company
+            });
+        }
+        else {
+            res.render('company/pages/index', { "status": "loginAdm" });
+        }
+
+    });
+
+    app.get('/flot', function(req, res) {
+        sess = req.session;
+        if (sess.company) {
+            res.render('company/pages/index', {
+                "status": "flot",
+                "company": sess.company
+            });
+        }
+        else {
+            res.render('company/pages/index', { "status": "loginAdm" });
+        }
+
+
+    });
+
+    app.get('/blank', function(req, res) {
+        if (sess.company) {
+            res.render('company/pages/index', {
+                "status": "blank",
+                "company": sess.company
+            });
+        }
+        else {
+            res.render('company/pages/index', { "status": "loginAdm" });
+        }
+
+    });
+
+    app.get('/notifications', function(req, res) {
+        if (sess.company) {
+            res.render('company/pages/index', {
+                "status": "notifications",
+                "company": sess.company
+            });
+        }
+        else {
+            res.render('company/pages/index', { "status": "loginAdm" });
+        }
+    });
+
+    app.get('/grid', function(req, res) {
+        if (sess.company) {
+            res.render('company/pages/index', {
+                "status": "grid",
+                "company": sess.company
+            });
+        }
+        else {
+            res.render('company/pages/index', { "status": "loginAdm" });
+        }
+
+    });
+
+    app.get('/panels-wells', function(req, res) {
+        res.render('company/pages/index', {
+            "status": "painel"
+        });
+    });
+
+
+
+    app.get('/buttons', function(req, res) {
+        res.render('company/pages/index', {
+            "status": "buttons"
+        });
+    });
+
+    app.get('/typography', function(req, res) {
+        res.render('company/pages/index', {
+            "status": "typography"
+        });
+    });
+
+    app.get('/icons', function(req, res) {
+        res.render('company/pages/index', {
+            "status": "icons"
+        });
+    });
+
+    app.get('/loginCompany', function(req, res) {
+        sess = req.session;
+        res.render('company/pages/index', {
+            "status": "loginAdm"
+        });
+    });
+
+
+
+    var sha1 = require('js-sha1');
+    app.post('/logedCompany', function(req, res) {
+        sess = req.session;
+
+
+        backPost['uri'] = "https://" + adress.host.concat('/logedCompany');
+        request.post({ backPost, url: backPost['uri'], form: { CompanyEmail: req.body.CompanyEmail, CompanyPassword: sha1(req.body.password) } }, function(error, response, body) {
+
+            var stdata = JSON.parse(body);
+            if (!error && response.statusCode == 200) {
+                if (!stdata.error) {
+                    //In this we are assigning email to sess.email variable.
+                    //email comes from HTML page.
+                    sess.company = stdata.message;
+                    return res.render('company/pages/index', { "company": sess.company, "status": "admCompany" });
+
+                }
+            }
+            res.end('done');
+
+
+            return res.render('company/pages/index', { "company": false, "status": "admCompany" });
+        });
+    });
+
+
+
+    app.get('/logedCompany', function(req, res) {
+        sess = req.session;
+
+        if (sess.company)
+            return res.render('company/pages/index', { "company": sess.company, "status": "admCompany" });
+        else {
+            sess.company = false;
+            return res.render('company/pages/index', { "company": sess.company, "status": "loginAdm" });
+        }
+    });
+
+
+    app.get('/logout', function(req, res) {
+        sess = req.session;
+        sess.company = false;
+        return res.render('company/pages/index', { "company": sess.company, "status": "loginAdm" });
+
+    });
+
+}

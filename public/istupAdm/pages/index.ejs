@@ -1,0 +1,32 @@
+  
+    <% var page = status  %>
+  
+  <% if(page !="login"){ %>
+    <% include header %>
+  <% } %> 
+  
+      
+      <!-- loading page main -->
+	<% if(page =="main"){ %>
+			<% include main %>
+	<% } %>
+	
+	<% if(page =="admProducts"){ %>
+			<% include admProducts %>
+	<% } %>
+	
+	<% if(page =="charts"){ %>
+			<% include charts %>
+	<% } %>
+	
+	<% if(page =="tables"){ %>
+			<% include tables %>
+	<% } %>
+	
+	<% if(page =="login"){ %>
+			<% include login %>
+	<% } %>
+
+	 <% if(page !="login"){ %>
+	    <% include footer %>
+  <% } %> 

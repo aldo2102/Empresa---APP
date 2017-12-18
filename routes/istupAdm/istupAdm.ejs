@@ -1,0 +1,165 @@
+module.exports = (app, router, sess, backPost, request, adress, backGet, upload, fs, ecommecerLocal, formidable, path) => {
+
+    var sha1 = require('js-sha1');
+
+    app.get('/administration', function(req, res) {
+        sess = req.session;
+        if (sess.adm)
+            res.render('istupAdm/pages/index', { "status": "main" });
+        else {
+            sess.adm = false;
+            return res.render('istupAdm/pages/index', { "adm": sess.adm, "status": "login" });
+        }
+    });
+    
+    
+    app.post('/admProdutos', function(req, res) {
+        sess = req.session;
+        if (sess.adm) {
+            backGet['uri'] = "https://" + adress.host.concat('/products/');
+            request(backGet, function(error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    if (!body.error)
+
+                        res.render('istupAdm/pages/index', { "status": "admProducts", "products": body.message });
+                }
+            });
+        }
+        else {
+            sess.adm = false;
+            return res.render('istupAdm/pages/index', { "adm": sess.adm, "status": "login" });
+        }
+    });
+
+
+
+    app.get('/admProdutos', function(req, res) {
+        sess = req.session;
+        if (sess.adm) {
+            backGet['uri'] = "https://" + adress.host.concat('/products');
+            request(backGet, function(error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    if (!body.error)
+
+                        res.render('istupAdm/pages/index', { "status": "admProducts", "products": body.message });
+                }
+            });
+        }
+        else {
+            sess.adm = false;
+            return res.render('istupAdm/pages/index', { "adm": sess.adm, "status": "login" });
+        }
+    });
+
+    app.get('/charts', function(req, res) {
+
+        res.render('istupAdm/pages/index', { "status": "charts" });
+    });
+
+    app.get('/loginistup', function(req, res) {
+
+        res.render('istupAdm/pages/index', { "status": "login" });
+    });
+
+
+
+    app.post('/logedAdm', function(req, res) {
+        sess = req.session;
+
+        backPost['uri'] = "https://" + adress.host.concat('/logedAdm');
+        request.post({ backPost, url: backPost['uri'], form: { admEmail: req.body.Email, admPassword: sha1(req.body.password) } }, function(error, response, body) {
+
+            var stdata = JSON.parse(body);
+            if (!error && response.statusCode == 200) {
+                if (!stdata.error) {
+                    //In this we are assigning email to sess.email variable.
+                    //email comes from HTML page.
+                    sess.adm = stdata.message;
+                    return res.render('istupAdm/pages/index', { "adm": sess.adm, "status": "administration" });
+
+                }
+            }
+
+
+            return res.render('istupAdm/pages/index', { "adm": false, "status": "login" });
+        });
+    });
+
+
+    app.get('/logedAdm', function(req, res) {
+        sess = req.session;
+
+        if (sess.adm)
+            return res.render('istupAdm/pages/index', { "adm": sess.adm, "status": "main" });
+        else {
+            sess.adm = false;
+            return res.render('istupAdm/pages/index', { "adm": sess.adm, "status": "login" });
+        }
+    });
+
+
+    app.get('/logout', function(req, res) {
+        sess = req.session;
+        sess.adm = false;
+        return res.render('istupAdm/pages/index', { "adm": sess.adm, "status": "login" });
+
+    });
+
+    // File input field name is simply 'file'
+    app.post('/products', function(req, res) {
+
+
+        var form = new formidable.IncomingForm();
+        var produto = req.body;
+        form.parse(req, function(err, fields, files) {
+            
+
+            var old_path = files.uriFigure.path,
+                file_size = files.uriFigure.size,
+                file_ext = files.uriFigure.name.split('.').pop(),
+                index = old_path.lastIndexOf('/') + 1,
+                file_name = old_path.substr(index),
+                new_path = path.join(ecommecerLocal, '/images/products/', file_name + '.' + file_ext);
+
+            fs.readFile(old_path, function(err, data) {
+                fs.writeFile(new_path, data, function(err) {
+                    fs.unlink(old_path, function(err) {
+                        if (err) {
+                            responseImg = {
+                                message: 'Sorry, file couldn\'t be uploaded.',
+                                filename: req.body.uriFigure
+                            };
+                        }
+                        else {
+                            responseImg = {
+                                message: 'File uploaded successfully',
+                                filename: req.body.uriFigure
+                            };
+                            req.body=fields;
+                            backPost['uri'] = "https://" + adress.host.concat('/products');
+                            request.post({ backPost, url: backPost['uri'], form: { productName: req.body.productName, productCode: req.body.productCode, productManufacturer: req.body.productManufacturer, productDescription: req.body.productDescription, productSize: req.body.productSize, productPriceUnity: req.body.productPriceUnity, ProductCategorie: req.body.ProductCategorie, uriFigure: '/images/products/'+ file_name + '.' + file_ext } }, function(error, response, body) {
+
+                                var stdata = JSON.parse(body);
+                                if (!error && response.statusCode == 200) {
+                                    if (!stdata.error) {
+                                        //In this we are assigning email to sess.email variable.
+                                        //email comes from HTML page.
+                                        sess.adm = stdata.message;
+                                        return res.render('istupAdm/pages/index', { "adm": sess.adm, "status": "administration" });
+
+                                    }
+                                }
+
+
+                            });
+                        }
+                    });
+                });
+            });
+
+        });
+
+        return res.render('istupAdm/pages/index', { "adm": false, "status": "administration" });
+    });
+
+}
