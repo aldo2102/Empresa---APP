@@ -1,0 +1,60 @@
+module.exports = (app, router, backGet, request, adress) => {
+
+    app.get('/index', function(req, res) {
+        backGet['uri'] = "https://" + adress.host.concat('/products');
+        request(backGet, function(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                if (!body.error)
+                    res.render('ecommecer/index', { "products": body.message, "status": "main" });
+            }
+        });
+    });
+
+
+
+    app.get('/account', function(req, res) {
+        res.render('ecommecer/index', {
+            "status": "account"
+        });
+    });
+
+
+    app.get('/checkout', function(req, res) {
+        res.render('ecommecer/index', {
+            "status": "checkout"
+        });
+    });
+
+    app.get('/contact', function(req, res) {
+        res.render('ecommecer/index', {
+            "status": "contact"
+
+        });
+    });
+
+
+    app.get('/listProducts', function(req, res) {
+
+        backGet['uri'] = "https://" + adress.host.concat('/products');
+        request(backGet, function(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                if (!body.error)
+                    res.render('ecommecer/index', { "products": body.message, "status": "products" });
+            }
+        });
+    });
+
+    app.get('/single/:id', function(req, res) {
+
+        backGet['uri'] = "https://" + adress.host.concat('/products/', req.params.id);
+        request(backGet, function(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                if (!body.error)
+                    res.render('ecommecer/index', { "products": body.message, "status": "single" });
+                console.log(body.message);
+            }
+        });
+    });
+
+
+}

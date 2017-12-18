@@ -14,7 +14,7 @@
     <!-- Custom icon font-->
     <link rel="stylesheet" href="css/fontastic.css">
     <!-- Google fonts - Roboto -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <!-- jQuery Circle-->
     <link rel="stylesheet" href="css/grasp_mobile_progress_circle-1.0.0.min.css">
     <!-- Custom Scrollbar-->
@@ -34,27 +34,19 @@
       <div class="container">
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
-            <div class="logo text-uppercase"><span>Dash</span><strong class="text-primary">Express</strong></div>
+            <div class="logo text-uppercase"><span>Bootstrap</span><strong class="text-primary">Dashboard</strong></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-            <form id="register-form">
+            <form id="login-form" method="post" action="/logedAdm">
               <div class="form-group">
-                <label for="register-username" class="label-custom">User Name</label>
-                <input id="register-username" type="text" name="registerUsername" required>
-              </div>
-              <div class="form-group">
-                <label for="register-email" class="label-custom">Email Address      </label>
-                <input id="register-email" type="email" name="registerEmail" required>
+                <label for="login-username" class="label-custom">User Name</label>
+                <input id="login-username" type="text" name="Email" required="">
               </div>
               <div class="form-group">
-                <label for="register-passowrd" class="label-custom">password        </label>
-                <input id="register-passowrd" type="password" name="registerPassword" required>
-              </div>
-              <div class="terms-conditions d-flex justify-content-center">
-                <input id="license" type="checkbox" class="form-control-custom">
-                <label for="license">Agree the terms and policy</label>
-              </div>
-              <input id="register" type="submit" value="Register" class="btn btn-primary">
-            </form><small>Already have an account? </small><a href="login.html" class="signup">Login</a>
+                <label for="login-password" class="label-custom">Password</label>
+                <input id="login-password" type="password" name="password" required="">
+              </div><button type="submit" id="login" class="btn btn-primary">Login</button>
+              <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+            </form><a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register.html" class="signup">Signup</a>
           </div>
           <div class="copyrights text-center">
             <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>

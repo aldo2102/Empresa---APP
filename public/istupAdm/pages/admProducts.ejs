@@ -1,0 +1,174 @@
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Assinatura</h4>
+      </div>
+      <div class="modal-body">
+        <% var message = message  %>
+          <p>
+            <%= message %>
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="breadcrumb-holder">
+  <div class="container-fluid">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Produtos</li>
+    </ul>
+  </div>
+</div>
+<section class="forms">
+  <div class="container-fluid">
+    <header>
+      <h1 class="h3 display">Produtos</h1>
+    </header>
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Cadastrar Produtos</button>
+
+    <div class="row">
+      <div id="demo" class="collapse">
+        <div class="card">
+          <div class="card-header d-flex align-items-center">
+            <h2 class="h5 display display">Novo Produto</h2>
+          </div>
+          <div class="card-body">
+            <form id="login-form" method="post" action="/products" enctype="multipart/form-data">
+              <div class="form-group">
+                <label>Nome do Produto</label>
+                <input name="productName" type="text" placeholder="Nome do Produto" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Código</label>
+                <input name="productCode" type="text" placeholder="Código" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Fabricante</label>
+                <input name="productManufacturer" type="text" placeholder="Fabricante" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Descrição do Produto</label>
+                <input name="productDescription" type="text" placeholder="Descrição" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Tamanho</label>
+                <input name="productSize" type="text" placeholder="Tamanho" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Preço Unitário</label>
+                <input name="productPriceUnity" type="text" placeholder="Preço Unitário" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Categoria</label>
+                <input name="ProductCategorie" type="text" placeholder="Categoria" class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label>Imagem</label>
+                <input name="uriFigure" type="file" placeholder="Imagem" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style type="text/css">
+    .table-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <div class="modal hide" id="addBookDialog" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">×</button>
+          <h3>Modal header</h3>
+        </div>
+        <div class="modal-body">
+          <p>some content</p>
+          <input type="text" name="bookId" id="bookId" value="" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <table class="table table-bordered" id="data-table">
+    <thead>
+      <tr>
+        <th data-column-id="_id" data-identifier="true" data-type="string" data-visible="false">idProduct</th>
+        <th data-column-id="imgsrc" data-identifier="true" data-type="string" data-visible="false">Img src</th>
+        <th data-column-id="image" data-formatter="image">Image</th>
+        <th data-column-id="productName">Nome do Produto</th>
+        <th data-column-id="productCode" data-order="desc">Código</th>
+        <th data-column-id="productManufacturer" data-order="desc">Fabricante</th>
+        <th data-column-id="productDescription" data-order="desc">Descrição</th>
+        <th data-column-id="productSize" data-order="desc">Tamanho</th>
+        <th data-column-id="productPriceUnity" data-order="desc">Preço Unitário</th>
+        <th data-column-id="ProductCategorie" data-order="desc">Categoria</th>
+        <th data-column-id="commands" data-formatter="commands" data-sortable="false">Comandos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(function (products) { %>
+
+        <tr>
+          
+          <td><%= products._id %></td>
+          
+          <td>
+            <%= products.uriFigure %>
+          </td>
+          <td>
+          </td>
+          <td>
+            <%= products.productName %>
+          </td>
+          <td>
+            <%= products.productCode %>
+          </td>
+          <td>
+            <%= products.productManufacturer %>
+          </td>
+          <td>
+            <%= products.productDescription %>
+          </td>
+          <td>
+            <%= products.productSize %>
+          </td>
+          <td>
+            <%= products.productPriceUnity %>
+          </td>
+          <td>
+            <%= products.ProductCategorie %>
+          </td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+</section>

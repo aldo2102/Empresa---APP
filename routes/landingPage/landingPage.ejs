@@ -1,0 +1,50 @@
+module.exports = (app, router, sess, backPost, request, adress) => {
+var cidades="";
+    app.get('/', function(req, res) {
+        var ano = (new Date()).getFullYear();
+        request("http://enderecos.metheora.com/api/cidade/1778/bairros", function(error, response, body) {
+            var cidades = JSON.parse(body);
+
+            if (!error && response.statusCode == 200) {
+
+                res.render('landingPage/index', { "status": "main", "ano": ano, "cidades": cidades });
+            }
+
+        });
+    });
+
+    app.post('/', function(req, res) {
+        sess = req.session;
+        var ano = (new Date()).getFullYear();
+        
+        backPost['uri'] = "https://" + adress.host.concat('/landingPages');
+        request.post({ backPost, url: backPost['uri'], form: { email: req.body.email, name: req.body.name, region: req.body.region } }, function(error, response, body) {
+        
+        cidades=request("http://enderecos.metheora.com/api/cidade/1778/bairros", function(error, response, body) {
+            cidades = JSON.parse(body);
+            return cidades;
+        });
+            var stdata = JSON.parse(body);
+            if (!error && response.statusCode == 200) {
+                if (!stdata.error) {
+                    //In this we are assigning email to sess.email variable.
+                    //email comes from HTML page.
+                    return res.render('landingPage/index', { "message": "Você assinou, agora ficará por dentro de tudo sobre a ISTUP", "status": "main", "ano": ano, "cidades": cidades  });
+
+                }
+                else {
+
+                    return res.render('landingPage/index', { "message": "Aconteceu um erro, tente novamente!", "status": "main", "ano": ano, "cidades": cidades  });
+                }
+            }
+            else {
+
+                return res.render('landingPage/index', { "message": "Aconteceu um erro, tente novamente!", "status": "main", "ano": ano, "cidades": cidades });
+            }
+            res.end('done');
+
+
+        });
+    });
+
+}
