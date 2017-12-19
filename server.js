@@ -11,6 +11,9 @@ app.use(session({ secret: "Shh, its a secret!" }));
 var sess;
 
 app.disable('x-powered-by');
+app.use(express.compress());
+var compress = require('compression');
+app.use(compress()); 
 
 var url = require('url');
 var adress = url.parse('https://empresa-aldo2102.c9users.io/', true);
