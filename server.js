@@ -11,7 +11,6 @@ app.use(session({ secret: "Shh, its a secret!" }));
 var sess;
 
 app.disable('x-powered-by');
-app.use(express.compress());
 var compress = require('compression');
 app.use(compress()); 
 
