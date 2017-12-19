@@ -50,7 +50,7 @@
 
 		.device-mockup > .device > .screen {
 			position: absolute;
-			top:    11.0438729%;
+			top:    0%;
 			bottom: 14.6747352%;
 			left:   13.364486%;
 			right:  13.364486%;
@@ -96,7 +96,7 @@
 }
 
 .device-mockup[data-device="macbook"] > .device > .screen {
-	top: 11.0438729%; bottom: 14.6747352%; left: 13.364486%; right: 13.364486%;
+	top: 0%; bottom: 14.6747352%; left: 13.364486%; right: 13.364486%;
 }
 
 /* MacBook 2015 */
@@ -342,7 +342,7 @@
 
 .device-mockup[data-device="iphone6_plus"] > .device > .screen,
 .device-mockup[data-device="iphone6_plus"][data-orientation="portrait"] > .device > .screen {
-    top: 11.58%; bottom: 11.58%; left: 5.97%; right: 5.97%;
+    top: 0%; bottom: 11.58%; left: 5.97%; right: 5.97%;
 }
 
 .device-mockup[data-device="iphone6_plus"][data-orientation="landscape"] > .device > .screen {

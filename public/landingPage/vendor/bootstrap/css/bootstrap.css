@@ -3302,7 +3302,7 @@ tbody.collapse.show {
   display: inline-flex;
   min-height: 1.5rem;
   padding-left: 1.5rem;
-  margin-right: 1rem;
+  /* margin-right: 1rem;*/
 }
 
 .custom-control-input {
@@ -3620,7 +3620,7 @@ tbody.collapse.show {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
+  /*margin-right: 1rem;*/
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
@@ -5143,7 +5143,7 @@ button.close {
     margin: 30px auto;
   }
   .modal-sm {
-    max-width: 300px;
+    max-width: 250px;
   }
 }
 

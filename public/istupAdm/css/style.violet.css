@@ -1502,7 +1502,7 @@ section.forms .input-group-btn .dropdown-menu a {
 .login-page form,
 .register-page form {
   margin: 0 auto 10px;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .login-page form .form-group,
@@ -1668,7 +1668,7 @@ STYLE SWITCHER FOR DEMO
 }
 
 #style-switch {
-  width: 300px;
+  width: 250px;
   padding: 20px;
   position: fixed;
   top: 160px;

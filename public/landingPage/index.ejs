@@ -59,7 +59,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" id='Logo' style='width:300px'>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" id='Logo' style='width:200px'>
           <img src="img/istup.png" class="logo">
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button"  data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +88,7 @@
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
               <h1 class="mb-5">
-                  iSTUP é uma nova forma de comprar suplementos. Uma grande rede para atender você de forma rápida, fácil e de baixo preço!
+                  <br \><br \>iSTUP é uma nova forma de comprar suplementos. Uma grande rede para atender você de forma rápida, fácil e de baixo preço!
               </h1>
               <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Assine!</a>
             </div>
@@ -101,7 +101,7 @@
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
                      <div class="container">
-			<div class="row main">
+			<div class="row">
 				<div class="main-login main-center">
 				  <div class="text-center">
 	               		<img src="img/istup.png" width=150/>
@@ -131,7 +131,7 @@
 							<label for="email" class="cols-sm-2 control-label">Sua Região</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-                  <select name="region" data-placeholder="Selecione sua região..." class="chosen-select" tabindex="2">
+                  <select  id="region" name="region" data-placeholder="Selecione sua região..." class="cols-sm-2 control-label" tabindex="2">
                       <option value=""></option>
                       <% for(var i=0; i<cidades.length; i++) {%>
                          <li><%= cidades[i] %></li>
@@ -201,7 +201,7 @@
 							<label for="email" class="cols-sm-2 control-label">Sua Região</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-                  <select name="region" data-placeholder="Selecione sua região..." class="chosen-select" tabindex="2">
+                  <select  id="region" name="region" data-placeholder="Selecione sua região..." class="cols-sm-2 control-label" tabindex="2">
                       <option value=""></option>
                       <% for(var i=0; i<cidades.length; i++) {%>
                          <li><%= cidades[i] %></li>
